@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digite seu e-mail para iniciar sessão</title>
+    <link rel="stylesheet" href="../css/auth.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <div class="inputs">
+            <div class="input-group">
+                <label>Email</label>
+                <input id="email" type="text" placeholder="username@gmail.com">
+            </div>
+            <div class="input-group">
+                <label>Password</label>
+                <input id="password" type="password" placeholder="Password">
+                <a>Forgot Password?</a>
+            </div>
+        </div>
+
+            <button id="sign-in" onclick="signIn()">Sign In</button>
+
+            <div class="continue-with">
+                <p>or continue with</p>
+
+                <div class="continue-btn">
+                    <button><img src="../img/google.png"></button>
+                    <button><img src="../img/apple-logo.png"></button>
+                    <button><img src="../img/facebook.png"></button>
+                </div>
+            </div>
+
+            <p id="change-page">Don't have an account yet? <a href="../pages/register.html">Register for free</a></p>
+    </div>
+    
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+body{
+    height: 100vh;
+    background: url(../img/sign-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255, 0.6);
+    position: relative;
+    padding: 80px 70px 80px 70px;
+    border-radius: 40px;
+    gap: 20px;
+}
+
+.container a{
+    text-decoration: none;
+}
+
+.container h1{
+    font-weight: 250;
+    font-size: 52px;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group label{
+    color: #161499;
+    font-size: 14px;
+}
+
+.input-group input{
+    outline: none;
+    border: none;
+    width: 400px;
+    height: 50px;
+    padding-left: 20px;
+    border-radius: 5px;
+}
+
+.input-group a{
+    font-size: 12px;
+    color: #161499;
+}
+
+.input-group input::placeholder{
+    font-size: 14px;
+}
+
+.input-group{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#sign-in{
+    background-color: #FFA500;
+    width: 400px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 25px;
+}
+
+#sign-in:hover{
+    cursor: pointer;
+    background-color: #FF8C00;
+    transition: background-color 0.2s linear;
+}
+
+.continue-with{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.continue-with p{
+    font-size: 14px;
+    color: #161499;
+    margin-top: 20px;
+}
+
+.continue-btn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.continue-btn button{
+    width: 125px;
+    height: 50px;
+    border-radius: 40px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.continue-btn button:hover{
+    background-color: #CFCFCF;
+    transition: background-color 0.2s linear;
+}
+
+.continue-btn img{
+    height: 24px;
+    width: 24px;
+}
+
+#change-page{
+    color: #161499;
+    font-size: 14px;
+}
+
+#change-page a{
+    font-weight: bold;
+}
