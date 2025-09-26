@@ -3,29 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preencha os dados para criar sua conta</title>
+    <title>Digite seu e-mail para iniciar sessão</title>
     <link rel="stylesheet" href="../css/auth.css">
 </head>
 <body>
     <div class="container">
-        <h1>Sign Up</h1>
+        <h1>Login</h1>
         <div class="inputs">
             <div class="input-group">
-                <label>Name</label>
-                <input id="name" type="text" placeholder="Name">
-            </div>
-
-            <div class="input-group">
                 <label>Email</label>
-                <input id="email" type="text" placeholder="username@gmail.com">
+                <input id="email" type="text" placeholder="Email">
             </div>
             <div class="input-group">
                 <label>Password</label>
                 <input id="password" type="password" placeholder="Password">
+                <a>Forgot Password?</a>
             </div>
         </div>
 
-            <button id="sign-in" onclick="signUp()">Sign Up</button>
+        <p id="error-p">Incorrect email or password</p>
+        <button id="sign-in" onclick="signIn()">Sign In</button>
 
             <div class="continue-with">
                 <p>or continue with</p>
@@ -37,9 +34,10 @@
                 </div>
             </div>
 
-            <p id="change-page">Already have an account? <a href="../pages/login.html">Sign In</a></p>
+            <p id="change-page">Don't have an account yet? <a href="register.html">Register for free</a></p>
     </div>
     
+    <script src="../js/config.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>

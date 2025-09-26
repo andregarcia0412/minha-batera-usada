@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digite seu e-mail para iniciar sessão</title>
+    <title>Preencha os dados para criar sua conta</title>
     <link rel="stylesheet" href="../css/auth.css">
 </head>
 <body>
     <div class="container">
-        <h1>Login</h1>
+        <h1>Sign Up</h1>
         <div class="inputs">
+            <div class="input-group">
+                <label>Name</label>
+                <input id="name" type="text" placeholder="Name">
+            </div>
+
             <div class="input-group">
                 <label>Email</label>
                 <input id="email" type="text" placeholder="username@gmail.com">
@@ -17,11 +22,11 @@
             <div class="input-group">
                 <label>Password</label>
                 <input id="password" type="password" placeholder="Password">
-                <a>Forgot Password?</a>
             </div>
         </div>
 
-            <button id="sign-in" onclick="signIn()">Sign In</button>
+            <p id="error-p">An account with this email already exists</p>
+            <button id="sign-in" onclick="signUp()">Sign Up</button>
 
             <div class="continue-with">
                 <p>or continue with</p>
@@ -33,9 +38,10 @@
                 </div>
             </div>
 
-            <p id="change-page">Don't have an account yet? <a href="../pages/register.html">Register for free</a></p>
+            <p id="change-page">Already have an account? <a href="login.html">Sign In</a></p>
     </div>
     
+    <script src="../js/config.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>

@@ -90,6 +90,13 @@ body{
     transition: background-color 0.2s linear;
 }
 
+#error-p{
+    color: red;
+    font-size: 14px;
+    align-self: center;
+    display: none;
+}
+
 .continue-with{
     display: flex;
     flex-direction: column;

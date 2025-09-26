@@ -5,6 +5,7 @@ import com.minhabaterausada.MinhaBateraUsadaAPI.domain.LoginRequest;
 import com.minhabaterausada.MinhaBateraUsadaAPI.domain.User;
 import com.minhabaterausada.MinhaBateraUsadaAPI.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,23 +19,23 @@ public class UserController {
     private UserService userService;
 
     @GetMapping
-    public List<User> listAll(){
-        return userService.listAllUsers();
+    public List<User> listAll(@RequestHeader(value = "X-API-PASSWORD", required = false) String password){
+        return userService.listAllUsers(password);
     }
 
     @GetMapping("/{id}")
-    public User getUser(@PathVariable("id") Long id){
-        return userService.getUser(id);
+    public User getUser(@PathVariable("id") Long id, @RequestHeader(value = "X-API-PASSWORD", required = false) String password){
+        return userService.getUser(id, password);
     }
 
     @PostMapping("")
-    public String addUser(@RequestBody User body){
-        return userService.addUser(body);
+    public boolean addUser(@RequestBody User body, @RequestHeader(value = "X-API-PASSWORD", required = false) String password){
+        return userService.addUser(body, password);
     }
 
     @PostMapping("/login")
-    public boolean verifyLogin(@RequestBody LoginRequest loginRequest){
-        return userService.verifyLogin(loginRequest);
+    public boolean verifyLogin(@RequestBody LoginRequest loginRequest, @RequestHeader(value = "X-API-PASSWORD", required = false) String password){
+        return userService.verifyLogin(loginRequest, password);
     }
 
 }

@@ -5,7 +5,10 @@ import com.minhabaterausada.MinhaBateraUsadaAPI.domain.LoginRequest;
 import com.minhabaterausada.MinhaBateraUsadaAPI.domain.User;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -20,7 +23,15 @@ public class UserService {
     @Autowired
     DatabaseConnection databaseConnection;
 
-    public List<User> listAllUsers(){
+    @Value("${API_PASSWORD}")
+    private String apiPassword;
+
+    public List<User> listAllUsers(String password){
+
+        if(!password.equals(apiPassword)){
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Invalid API password");
+        }
+
         List<User> users = new ArrayList<>();
         String sql = "SELECT id, email, password, name FROM tb_user";
         try(Connection conn = databaseConnection.getConnection()){
@@ -39,7 +50,7 @@ public class UserService {
         return users;
     }
 
-    public User getUser(long id){
+    public User getUser(long id, String password){
         String sql = "SELECT email, password, name FROM tb_user WHERE id = ?";
         try(Connection conn = databaseConnection.getConnection();
             PreparedStatement statement = conn.prepareStatement(sql)) {
@@ -55,7 +66,7 @@ public class UserService {
         return null;
     }
 
-    public String addUser(User user){
+    public boolean addUser(User user, String password){
         if(!emailAlreadyExists(user.getEmail())){
             String sql = "INSERT INTO tb_user (email, password, name) VALUES (?,?,?)";
             try(Connection conn = databaseConnection.getConnection();
@@ -64,16 +75,16 @@ public class UserService {
                     statement.setString(2, encryptPassword(user.getPassword()));
                     statement.setString(3, user.getName());
                     statement.executeUpdate();
-                    return "User added";
+                    return true;
                 } catch (SQLException ex) {
                 throw new RuntimeException(ex);
             }
         } else{
-            return "User not added";
+            return false;
         }
     }
 
-    public boolean emailAlreadyExists(String email){
+    private boolean emailAlreadyExists(String email){
         String sql = "SELECT name FROM tb_user WHERE email = ?";
         try(Connection conn = databaseConnection.getConnection();
             PreparedStatement statement = conn.prepareStatement(sql)){
@@ -86,7 +97,7 @@ public class UserService {
         }
     }
 
-    public boolean verifyLogin(LoginRequest loginRequest){
+    public boolean verifyLogin(LoginRequest loginRequest, String password){
         String sql = "SELECT password FROM tb_user WHERE email = ?";
         try(Connection conn = databaseConnection.getConnection();
             PreparedStatement statement = conn.prepareStatement(sql)){
