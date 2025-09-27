@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>minha-batera-usada</title>
+    <title>Minha Batera Usada</title>
     <link rel="icon" href="/img/drum.png" type="image/png">
     <style>
         html {
@@ -16,25 +16,39 @@
 
   <header>
     <h1>Minha Batera Usada</h1>
+
+    <div class="search-bar">
+      <select id="categories">
+        <option value="all" selected>All</option>
+        <option value="drumsets">Drumsets</option>
+        <option value="cymbals">Cymbals</option>
+        <option value="snares">Snares</option>
+        <option value="skins">Skins</option>
+        <option value="drumsticks">Drumsticks</option>
+        <option value="accessories">Accessories</option>
+        <option value="hardware">Hardware</option>
+        <option value="bags-cases">Bags and cases</option>
+      </select>
+      <input type="text" placeholder="Search">
+      <button><img src="/img/search.png"></button>
+    </div>
+
     <div class="sections">
       <button>Home</button>
       <button>Shop</button>
       <button>About</button>
       <button>Contact</button>
     </div>
+    
 
     <div class="login-register">
-      <img src="/img/user">
+      <button><img src="/img/user.png"></button>
       <a href="login.html">Login</a>
       <p>/</p>
       <a href="register.html">Register</a>
     </div>
 
-    <div class="search-shopping">
-        <input type="text" placeholder="Search">
-        <button><img src="/img/search.png"></button>
-      </div>
-        <button><img src="/img/shopping-cart.png"></button>
+        <button id="shopping-cart"><img src="/img/shopping-cart.png"></button>
   </header>
 
   <body>

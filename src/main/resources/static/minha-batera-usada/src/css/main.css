@@ -14,27 +14,94 @@ html{
 
 header{
     display: flex;
-    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 25px 0 25px;
 }
 
 header h1{
     color: #252B42;
+    font-size: 32px;
 }
 
 .sections{
     display: flex;
-    height: 20px;
-    width: 100px;
-    margin-right: 50px;
-    gap: 15px;
 }
 
 .sections button{
     background: none;
     border: none;
     color: #737373;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 0 20px 0 20px;
 }
 
-.sections button:hover{
+.login-register{
+    display: flex;
+    gap: 5px;
+}
+
+.login-register a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.login-register button{
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
+}
+
+.login-register img{
+    width: 24px;
+    height: 24px;
+}
+
+.search-bar{
+    display: flex;
+    height: 24px;
+}
+
+.search-bar input{
+    width: 100%;
+    padding: 14px;
+    padding-left: 55px;
+    font-size: 14px;
+    background-color: #F5F5F5;
+    border: 1px solid #DADADA;
+    border-radius: 5px;
+    outline: none;
+}
+
+.search-bar button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFA500;
+    border: none;
+    cursor: pointer;
+}
+
+
+.search-bar img{
+    height: 24px;
+    width: 24px;
+}
+
+.search-bar select{
+
+}
+
+#shopping-cart{
+    display: flex;
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: none;
     cursor: pointer;
 }
