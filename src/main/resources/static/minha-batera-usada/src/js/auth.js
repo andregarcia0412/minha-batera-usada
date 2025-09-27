@@ -1,3 +1,8 @@
+import "../css/auth.css"
+
+const apiPassword = import.meta.env.VITE_API_PASSWORD
+const apiURL = import.meta.env.VITE_API_URL
+
 async function signUp() {
     const name = document.getElementById("name").value
     const email = document.getElementById("email").value
@@ -22,10 +27,11 @@ async function signUp() {
         return
     }
 
-    const response = await fetch('http://localhost:8080/user', {
+    const response = await fetch(`${apiURL}/user`, {
         method:'POST',
         headers:{
-            'Content-Type':'application/json'
+            'Content-Type':'application/json',
+            'X-API-PASSWORD':apiPassword
         },
         body: JSON.stringify({email:email, password:password, name:name})
     })
@@ -58,10 +64,11 @@ async function signIn(){
         return
     }
 
-    const response = await fetch('http://localhost:8080/user/login', {
+    const response = await fetch(`${apiURL}/user/login`, {
         method:'POST',
         headers:{
-            'Content-Type':'application/json'
+            'Content-Type':'application/json',
+            'X-API-PASSWORD':apiPassword
         },
         body: JSON.stringify({email:email, password:password})
     })
@@ -74,4 +81,14 @@ async function signIn(){
         errorP.textContent = "Incorrect email or password"
     }
 
+}
+
+const signInBtn = document.getElementById("sign-in")
+if(signInBtn){
+    signInBtn.addEventListener("click", signIn)
+}
+
+const signUpBtn = document.getElementById("sign-up")
+if(signUpBtn){
+    signUpBtn.addEventListener("click", signUp)
 }

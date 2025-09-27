@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Preencha os dados para criar sua conta</title>
-    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="icon" href="/img/drum.png" type="image/png">
+    <style>
+        html {
+            visibility: hidden;
+            opacity: 0;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -26,22 +32,21 @@
         </div>
 
             <p id="error-p">An account with this email already exists</p>
-            <button id="sign-in" onclick="signUp()">Sign Up</button>
+            <button id="sign-up">Sign Up</button>
 
             <div class="continue-with">
                 <p>or continue with</p>
 
                 <div class="continue-btn">
-                    <button><img src="../img/google.png"></button>
-                    <button><img src="../img/apple-logo.png"></button>
-                    <button><img src="../img/facebook.png"></button>
+                    <button><img src="/img/google.png"></button>
+                    <button><img src="/img/apple-logo.png"></button>
+                    <button><img src="/img/facebook.png"></button>
                 </div>
             </div>
 
             <p id="change-page">Already have an account? <a href="login.html">Sign In</a></p>
     </div>
     
-    <script src="../js/config.js"></script>
-    <script src="../js/main.js"></script>
+    <script type="module" src="/src/js/auth.js"></script>
 </body>
 </html>

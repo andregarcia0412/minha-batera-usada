@@ -51,6 +51,9 @@ public class UserService {
     }
 
     public User getUser(long id, String password){
+        if(!password.equals(apiPassword)){
+            return null;
+        }
         String sql = "SELECT email, password, name FROM tb_user WHERE id = ?";
         try(Connection conn = databaseConnection.getConnection();
             PreparedStatement statement = conn.prepareStatement(sql)) {
@@ -67,6 +70,9 @@ public class UserService {
     }
 
     public boolean addUser(User user, String password){
+        if(!password.equals(apiPassword)){
+            return false;
+        }
         if(!emailAlreadyExists(user.getEmail())){
             String sql = "INSERT INTO tb_user (email, password, name) VALUES (?,?,?)";
             try(Connection conn = databaseConnection.getConnection();
@@ -98,6 +104,9 @@ public class UserService {
     }
 
     public boolean verifyLogin(LoginRequest loginRequest, String password){
+        if(!password.equals(apiPassword)){
+            return false;
+        }
         String sql = "SELECT password FROM tb_user WHERE email = ?";
         try(Connection conn = databaseConnection.getConnection();
             PreparedStatement statement = conn.prepareStatement(sql)){

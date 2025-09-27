@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digite seu e-mail para iniciar sessão</title>
-    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="icon" href="/img/drum.png" type="image/png">
+    <style>
+        html {
+            visibility: hidden;
+            opacity: 0;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -22,22 +28,21 @@
         </div>
 
         <p id="error-p">Incorrect email or password</p>
-        <button id="sign-in" onclick="signIn()">Sign In</button>
+        <button id="sign-in">Sign In</button>
 
             <div class="continue-with">
                 <p>or continue with</p>
 
                 <div class="continue-btn">
-                    <button><img src="../img/google.png"></button>
-                    <button><img src="../img/apple-logo.png"></button>
-                    <button><img src="../img/facebook.png"></button>
+                    <button><img src="/img/google.png"></button>
+                    <button><img src="/img/apple-logo.png"></button>
+                    <button><img src="/img/facebook.png"></button>
                 </div>
             </div>
 
             <p id="change-page">Don't have an account yet? <a href="register.html">Register for free</a></p>
     </div>
     
-    <script src="../js/config.js"></script>
-    <script src="../js/main.js"></script>
+    <script type="module" src="/src/js/auth.js"></script>
 </body>
 </html>
