@@ -16,65 +16,67 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 10px 25px 0 25px;
+    padding: 10px 25px 10px 25px;
+    background-color: #131921;
 }
 
 header h1{
-    color: #252B42;
+    color: #F5F5F5;
     font-size: 32px;
-}
-
-.sections{
-    display: flex;
-}
-
-.sections button{
-    background: none;
-    border: none;
-    color: #737373;
-    cursor: pointer;
-    font-size: 14px;
-    margin: 0 20px 0 20px;
 }
 
 .login-register{
     display: flex;
-    gap: 5px;
+    gap: 40px;
+    color: #23A6F0;
+    height: auto;
+    align-items: center;
+    justify-content: center;
 }
 
 .login-register a{
     text-decoration: none;
-    color: #000000;
+    color: #23A6F0;
+}
+
+#login-register-text{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
 }
 
 .login-register button{
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
     border: none;
     background: none;
+    cursor: pointer;
 }
 
 .login-register img{
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
 }
 
 .search-bar{
     display: flex;
-    height: 24px;
+    justify-content: center;
+    height: auto;
+    width: auto;
 }
 
 .search-bar input{
-    width: 100%;
-    padding: 14px;
-    padding-left: 55px;
+    width: 110vh;
+    height: 38px;
+    padding: 7px 10px 10px 0;
+    text-indent: 8px;
     font-size: 14px;
     background-color: #F5F5F5;
     border: 1px solid #DADADA;
-    border-radius: 5px;
     outline: none;
 }
 
@@ -83,8 +85,13 @@ header h1{
     align-items: center;
     justify-content: center;
     background: #FFA500;
+    border: 1px solid #FFA500;
     border: none;
     cursor: pointer;
+    height: 38px;
+    padding: 14px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 
@@ -94,7 +101,13 @@ header h1{
 }
 
 .search-bar select{
-
+    height: 38px;
+    width: 60px;
+    border: 1px solid #DADADA;
+    background-color: #DDD;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    color: rgba(0, 0, 0, 0.6);
 }
 
 #shopping-cart{
